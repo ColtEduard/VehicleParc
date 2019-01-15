@@ -1,9 +1,11 @@
 
 #include "Vehicle.h"
 #include <iostream>
+#include <string.h>
 
 using namespace std;
 
+/*
 // Unknown type;
 const int UNKNWON = -1;
 
@@ -27,60 +29,76 @@ const int MERCEDES = 1;
 const int VOLKSWAGEN = 2;
 const int GMC = 3;
 const int BMW = 4;
+*/
 
-
-Vehicle::Vechice()
+Vehicle::Vehicle()
 {
- this->number_wheels = NULL;
- this->colour = NULL;
- this->fuel = NULL;
- this->brand = NULL;
- this->cylindrical_capacity = NULL;
- this->number_seats = NULL;
- this->year = NULL; 
- this->consumption = NULL;
+	this->id++;
+	this->numberWheels = NULL;
+	this->colour = "";
+	this->fuel = "";
+	this->brand = "";
+	this->cylindricalCapacity = NULL;
+	this->numberSeats = NULL;
+	this->year = NULL;
+	this->consumption = NULL;
+	this->string = Vehicle;
 }
 
-Vehicle::Vehicle(int number_wheels, int colour, int fuel, int brand, int cylindrical_capacity, int number_seats, int year, int consumption)
+Vehicle::Vehicle(int numberWheels, string colour, string fuel, string brand,
+	int cylindricalCapacity, int numberSeats, int year, double consumption)
 {
- this->number_wheels = number_seats;
- this->colour = colour;
- this->fuel = fuel;
- this->brand = brand;
- this->cylindrical_capacity = cylindrical_capacity;
- this->number_seats = number_seats;
- this->year = year; 
- this->consumption = consumption;
+	this->id++;
+	this->numberWheels = numberSeats;
+	this->colour = colour;
+	this->fuel = fuel;
+	this->brand = brand;
+	this->cylindricalCapacity = cylindricalCapacity;
+	this->numberSeats = numberSeats;
+	this->year = year; 
+	this->consumption = consumption;
 }
 
-void Vehicle::setNumber_wheels(int number)
+Vehicle::~Vehicle()
 {
-     this->number_seats = number;
+    
 }
 
-void Vehicle::setCoulour(int colour)
+// ---SETTERS---
+
+void Vehicle::setId(int id)
+{
+	this->id = id;
+}
+
+void Vehicle::setNumberWheels(int number)
+{
+     this->numberSeats = number;
+}
+
+void Vehicle::setCoulour(string colour)
 {
     this->colour = colour;
 }
 
-void Vehicle::setFuel(int fuel)
+void Vehicle::setFuel(string fuel)
 {
     this->fuel = fuel;
 }
 
-void Vehicle::setBrand(int brand)
+void Vehicle::setBrand(string brand)
 {
     this->brand = brand;
 }
 
-void Vehicle::setCylindrical_capacity(int cc)
+void Vehicle::setCylindricalCapacity(int cc)
 {
-    this->cylindrical_capacity = cc;
+    this->cylindricalCapacity = cc;
 }
 
-void Vehicle::setNumber_seats(int number)
+void Vehicle::setNumberSeats(int number)
 {
-    this->number_seats = number;
+    this->numberSeats = number;
 }
 
 void Vehicle::setYear(int year)
@@ -88,53 +106,78 @@ void Vehicle::setYear(int year)
     this->year = year;
 }
 
-void Vehicle::setConsumption(int consumption)
+void Vehicle::setConsumption(double consumption)
 {
     this->consumption = consumption;
 }
 
-int getNumber_wheels()
+// ---GETTERS---
+
+int Vehicle::getId()
 {
-    return this->number_seats;
+	return id;
 }
 
-int getCoulour()
+int Vehicle::getNumberWheels()
 {
-    return this->colour;
+    return numberSeats;
 }
 
-int getFuel()
+string Vehicle::getCoulour()
 {
-    return this->fuel;
+    return colour;
 }
 
-int getBrand()
+string Vehicle::getFuel()
 {
-    return this->brand;
+    return fuel;
 }
 
-int getCylindrical_capacity()
+string Vehicle::getBrand()
 {
-    return this->cylindrical_capacity;
+    return brand;
 }
 
-int getNumber_seats()
+int Vehicle::getCylindricalCapacity()
 {
-    return this->number_seats;
+    return cylindricalCapacity;
 }
 
-int getYear()
+int Vehicle::getNumberSeats()
 {
-    return this->year;
+    return numberSeats;
 }
 
-int getConsumption()
+int Vehicle::getYear()
 {
-    return this->consumption;
+    return year;
 }
 
-
-Vehicle::~Vechicle()
+double Vehicle::getConsumption()
 {
-    
+    return consumption;
 }
+
+string getType()
+{
+	return type;
+}
+
+// UTILITY
+void Vechicle::display()
+{
+	cout << "Vehicle ID: " << id << endl;
+	cout << "Type: " << type << endl;
+	cout << "Number wheels: " << numberWheels << endl;
+	cout << "Colour: " << colour << endl;
+	cout << "Fuel: " << fuel << endl;
+	cout << "Brand: " << brand << endl;
+	cout << "Cylindrical Capacity: " << cylindricalCapacity << endl;
+	cout << "Number seats: " << numberSeats << endl;
+	cout << "Year: " << year << endl;
+	cout << "Consumption: " << consumption << endl;
+	cout << "------------------------------" << endl;
+	cout << "------------------------------" << endl;
+
+}
+

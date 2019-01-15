@@ -1,17 +1,34 @@
-
-
 #ifndef VEHICLE_H
 #define VEHICLE_H
 
 #include <iostream>
+#include <string.h>
 using namespace std;
 
 
 
-class Vechicle{
-public: 
-    Vehicle();
+class Vehicle{
 
+protected:
+    
+	int id;
+	int numberWheels;
+	string colour;
+	string fuel;
+	string brand;
+	int cylindricalCapacity;
+	int numberSeats;
+	int year;
+	double consumption;
+    string type;
+
+public: 
+
+    Vehicle();
+	Vehicle(int, string, string, string, int, int, int, double);
+
+	~Vehicle();
+	/*
     // Fuel type
     const int GAS, DIELES, HYDROGEN;
 
@@ -20,29 +37,36 @@ public:
 
     // brands
     const int MERCEDES, VOLKSWAGEN, GMC, BMW;
+	*/
 
-    void setNumber_wheels(int number);
-    void setCoulour(int colour);
-    void setFuel(int fuel);
-    void setBrand(int brand);
-    void setCylindrical_capacity(int cc);
-    void setNumber_seats(int number);
-    void setYear(int year);
-    void setConsumption(int consumption);
+	// SETTERS
+	void setId(int);
+    void setNumberWheels(int);
+    void setCoulour(string);
+    void setFuel(string);
+    void setBrand(string);
+    void setCylindricalCapacity(int);
+    void setNumberSeats(int);
+    void setYear(int);
+    void setConsumption(double);
 
-    int getNumber_wheels( );
-    int getCoulour();
-    int getFuel();
-    int getBrand();
-    int getCylindrical_capacity();
-    int getNumber_seats();
+	// GETTERS
+	int getId();
+    int getNumberWheels( );
+    string getCoulour();
+    string getFuel();
+    string getBrand();
+    int getCylindricalCapacity();
+    int getNumberSeats();
     int getYear();
-    int getConsumption();
-   
-    ~Vechicle();
+    double getConsumption();
+    string getType();
 
-private:
-int number_wheels, colour, fuel, brand, cylindrical_capacity, number_seats, year, consumption;
+	// UTILITY
+	void display();
+   
+    
+
 
 
 
