@@ -1,7 +1,7 @@
 
 #include "Vehicle.h"
 #include <iostream>
-#include <string.h>
+#include <string>
 
 using namespace std;
 
@@ -31,25 +31,29 @@ const int GMC = 3;
 const int BMW = 4;
 */
 
+int Vehicle::globalID = 0;
+
 Vehicle::Vehicle()
 {
-	this->id++;
-	this->numberWheels = NULL;
+	globalID++;
+	this->id=globalID;
+	this->numberWheels = 0;
 	this->colour = "";
 	this->fuel = "";
 	this->brand = "";
-	this->cylindricalCapacity = NULL;
-	this->numberSeats = NULL;
-	this->year = NULL;
-	this->consumption = NULL;
-	this->string = Vehicle;
+	this->cylindricalCapacity = 0;
+	this->numberSeats = 0;
+	this->year = 0;
+	this->consumption = 0;
+	this->type = "Vehicle";
 }
 
 Vehicle::Vehicle(int numberWheels, string colour, string fuel, string brand,
 	int cylindricalCapacity, int numberSeats, int year, double consumption)
 {
-	this->id++;
-	this->numberWheels = numberSeats;
+	
+	this->id = ++globalID;
+	this->numberWheels = numberWheels;
 	this->colour = colour;
 	this->fuel = fuel;
 	this->brand = brand;
@@ -158,13 +162,13 @@ double Vehicle::getConsumption()
     return consumption;
 }
 
-string getType()
+string  Vehicle::getType()
 {
 	return type;
 }
 
 // UTILITY
-void Vechicle::display()
+void Vehicle::display()
 {
 	cout << "Vehicle ID: " << id << endl;
 	cout << "Type: " << type << endl;
@@ -179,5 +183,5 @@ void Vechicle::display()
 	cout << "------------------------------" << endl;
 	cout << "------------------------------" << endl;
 
-}
 
+}
