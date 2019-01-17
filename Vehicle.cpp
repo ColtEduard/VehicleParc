@@ -1,7 +1,10 @@
 
+
 #include "Vehicle.h"
 #include <iostream>
 #include <string>
+#include <fstream>
+#include <vector>
 
 using namespace std;
 
@@ -46,13 +49,14 @@ Vehicle::Vehicle()
 	this->year = 0;
 	this->consumption = 0;
 	this->type = "Vehicle";
+	
 }
 
 Vehicle::Vehicle(int numberWheels, string colour, string fuel, string brand,
 	int cylindricalCapacity, int numberSeats, int year, double consumption)
 {
 	
-	this->id = ++globalID;
+	this->id = globalID++;
 	this->numberWheels = numberWheels;
 	this->colour = colour;
 	this->fuel = fuel;
@@ -61,6 +65,8 @@ Vehicle::Vehicle(int numberWheels, string colour, string fuel, string brand,
 	this->numberSeats = numberSeats;
 	this->year = year; 
 	this->consumption = consumption;
+	this->type = "Vehicle";
+	//cout << "Created Vehicle" << endl;
 }
 
 Vehicle::~Vehicle()
