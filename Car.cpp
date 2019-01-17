@@ -4,10 +4,11 @@
 
 using namespace std;
 
+
 Car::Car() : Vehicle() 
 {
 	this->numberWheels = 4;
-	this->type="Vehicle";
+	this->type="Car";
 }
 
 Car::Car(string colour, string fuel, string brand,
@@ -15,28 +16,13 @@ Car::Car(string colour, string fuel, string brand,
 	:Vehicle(4, colour, fuel, brand,
 		cylindricalCapacity, numberSeats, year, consumption)
 {
-	this->type = "Vehicle";
+	this->type = "Car";
+
+	//cout << "Car created" << endl;
 
 }
 
 Car::~Car()
 {
-
-}
-
-void Car::display()
-{
-	cout << "Vehicle ID: " << id << endl;
-	cout << "Type: " << type << endl;
-	cout << "Number wheels: " << numberWheels << endl;
-	cout << "Colour: " << colour << endl;
-	cout << "Fuel: " << fuel << endl;
-	cout << "Brand: " << brand << endl;
-	cout << "Cylindrical Capacity: " << cylindricalCapacity << endl;
-	cout << "Number seats: " << numberSeats << endl;
-	cout << "Year: " << year << endl;
-	cout << "Consumption: " << consumption << endl;
-	cout << "------------------------------" << endl;
-	cout << "------------------------------" << endl;
 
 }
