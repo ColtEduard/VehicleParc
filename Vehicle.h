@@ -10,7 +10,7 @@ using namespace std;
 class Vehicle {
 
 protected:
-
+	static int globalID;
 	int id;
 	int numberWheels;
 	string colour;
