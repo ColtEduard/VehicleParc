@@ -1,0 +1,7 @@
+V,4,red,gas,VW,2000,2,2001,8
+C,white,petrol,BMW,3000,3,2025,6
+M,pink,electric,Dacia,1000,1952,7.3
+B,black,petrol,Mercedes,6500,8,2021,5.3
+C,black'nt,gas,BMW,2560,10,2025,8.7
+B,white,petrol,Gucci,3000,3,2025,12.3
+V,5,red,gas,VW,2000,2,2001,4.5
