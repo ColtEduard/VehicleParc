@@ -1,8 +1,10 @@
 #ifndef CAR_H
 #define CAR_H
 
+#include "Vehicle.h"
 #include <iostream>
-#include <string.h>
+#include <string>
+
 using namespace std;
 
 class Car : public Vehicle
@@ -10,7 +12,7 @@ class Car : public Vehicle
 
 public:
 Car();
-Car(int, string, string, string, int, int, int, double);
+Car(string, string, string, int, int, int, double);
 ~Car();
 void display();
 
