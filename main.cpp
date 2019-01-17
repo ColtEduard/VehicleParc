@@ -86,5 +86,5 @@ int main()
 
 	WINPAUSE
 }
-}
+
 
