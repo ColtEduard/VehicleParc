@@ -14,7 +14,7 @@ public:
 Car();
 Car(string, string, string, int, int, int, double);
 ~Car();
-void display();
+
 
 };
 
